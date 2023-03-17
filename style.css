@@ -6,6 +6,7 @@
 
 .container {
     background-color: #111;
+    overflow: hidden;
 }
 
 .salute{
@@ -54,6 +55,10 @@
 .dark {
     background: url('./assets/img/bg1.png');
 }
+
+.purple {
+    background: rgb(135, 54, 167) url("./assets/img/bg2.png");
+  }
 
 .jobTitle {
     font-size: 10vw;
@@ -199,11 +204,15 @@
 
 .githubChart {
     width: 820px;
+    text-align: center;
 }
 
 .dates {
     padding: 10px;
     color: #555;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .boxContainer {
@@ -218,8 +227,67 @@
     background-color: #171c25;
     border-radius: 2px;
     cursor: pointer;
+    transition: 3s all ease;
 }
 
-.active:nth-child(2n) {
+.active:nth-child(4n) {
     background-color: #195b2c;
 }
+
+.githubChart:hover .active:nth-child(2n+1) {
+    background-color: #195b2c;
+}
+
+.githubChart:hover .active:nth-child(2n) {
+    background-color: #063f24;
+}
+
+.githubSm {
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .projects {
+        padding: 0 30px;
+        text-align: center;
+    }
+
+    .project{
+        flex-direction: column;
+        height: max-content;
+    }
+    .project:nth-child(2n){
+        flex-direction: column;
+    }
+
+    .phone,.laptop {
+        transform: none !important;
+    }
+
+    .githubChart {
+        display: none;
+    }
+
+    .githubTitle {
+        text-align: center;
+        font-size: 10vw;
+    }
+
+    .githubSm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        color: #555;
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    .githubLogo {
+        height: 100px;
+        width: 100px;
+    }
+
+}
+
+
